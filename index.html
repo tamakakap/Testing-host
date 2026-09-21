@@ -18,9 +18,17 @@
 <div class="love-screen" id="loveScreen"></div>
 
 <script src="script.js"></script>
+<!-- Efek Kembang Api Tanpa Ubah Kode Lama -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-    confetti({ particleCount: 150, spread: 180, origin: { y: 0.5 } });
+    // Kembang api otomatis meledak saat halaman dibuka
+    window.addEventListener('load', () => {
+        confetti({
+            particleCount: 150,
+            spread: 180,
+            origin: { y: 0.6 }
+        });
+    });
 </script>
 </body>
 </html>
