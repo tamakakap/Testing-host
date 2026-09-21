@@ -18,16 +18,21 @@
 <div class="love-screen" id="loveScreen"></div>
 
 <script src="script.js"></script>
-<!-- Efek Kembang Api Tanpa Ubah Kode Lama -->
+<!-- Efek Kembang Api Terus-menerus Tanpa Ubah Kode Lama -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
-    // Kembang api otomatis meledak saat halaman dibuka
+    // Kembang api akan meledak secara terus menerus setiap 1.5 detik
     window.addEventListener('load', () => {
-        confetti({
-            particleCount: 150,
-            spread: 180,
-            origin: { y: 0.6 }
-        });
+        setInterval(() => {
+            confetti({
+                particleCount: 50,
+                spread: 100,
+                origin: { 
+                    x: Math.random(), // Posisi horizontal acak (kiri ke kanan)
+                    y: Math.random() - 0.2 // Posisi vertikal di sekitar atas/tengah layar
+                }
+            });
+        }, 1500); // Angka 1500 artinya jeda 1.5 detik tiap ledakan (bisa diubah sesuai selera)
     });
 </script>
 </body>
